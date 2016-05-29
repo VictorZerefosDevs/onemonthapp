@@ -6,6 +6,10 @@ $navbar-inverse-bg: #fff;
 $navbar-inverse-link-hover-color:  #c0392b;
 $navbar-height: 100px;
 $jumbotron-bg: #fff;
+$navbar-inverse-toggle-border-color: #c0392b;
+$navbar-inverse-toggle-icon-bar-bg: #c0392b;
+$navbar-inverse-toggle-hover-bg: #fff;
+$well-bg:rgba(26, 188, 156,0.5);
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -16,6 +20,9 @@ body {
 
 .navbar-inverse {
 	border-radius: 0;
+}
+.navbar-right li {
+	text-transform: uppercase;
 }
 .navbar-brand {
 	font-size: 30px;
@@ -33,3 +40,13 @@ body {
 	background: #fff;
 	border-color:  #c0392b;
 }
+.well {
+	box-shadow: 0px 0px 15px  #888888;
+}
+.center {
+	text-align: center;
+	font-family: 'Aladin', cursive;
+	font-size: 4em;
+	color: #c0392b;
+}
+

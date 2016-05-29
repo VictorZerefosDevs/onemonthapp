@@ -2,7 +2,7 @@
 	<h1>Welcome to Zvelops app!</h1>
 
 	<% if user_signed_in? %>
-			signed in
+		<%= 	current_user.email %>
 	<% else %>		
 		<p>
 			<%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-default btn-lg' %>
