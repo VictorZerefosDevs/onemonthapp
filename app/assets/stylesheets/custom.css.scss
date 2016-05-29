@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Aladin);
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+$body-bg: #ecf0f1;
+$navbar-inverse-bg: #fff;
+$navbar-inverse-link-hover-color:  #c0392b;
+$navbar-height: 100px;
+$jumbotron-bg: #fff;
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+.navbar-inverse {
+	border-radius: 0;
+}
+.navbar-brand {
+	font-size: 30px;
+}
+#logo {
+	font-weight: bold;
+	font-size: 45px;
+	color: #c0392b;
+	font-family: 'Aladin', cursive;
+}
+.btn-default {
+	border-radius: 30px;
+}
+.btn-default:hover {
+	background: #fff;
+	border-color:  #c0392b;
+}
