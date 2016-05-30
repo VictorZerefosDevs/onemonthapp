@@ -1,16 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+	<div class="col-lg-4 col-lg-offset-4 ">
+      <p class="text-center" >
+        <strong>Image:</strong> <br>
+        <%= image_tag  @post.image.url(:thumb), class: 'image' %>
+      </p>
+      <p class="text-center style">
+        <strong>Title:</strong>
+        <%= @post.title %>
+      </p>
+      <p class="text-center style">
+        <strong>Content:</strong>
+        <%= @post.content %>
+      </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+      <p class="text-center">
+        <% if @post.user == current_user%>
+          <%= link_to 'Edit', edit_post_path(@post) %> |
+       <% end %>
+       <%= link_to 'Back', posts_path %>
+      </p>
+       
+	</div>
+</div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
- <% if @post.user == current_user%>
-		<%= link_to 'Edit', edit_post_path(@post) %> |
- <% end %>
-<%= link_to 'Back', posts_path %>
