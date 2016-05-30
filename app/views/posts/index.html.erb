@@ -5,14 +5,13 @@
 <table class="table">
   <thead>
     <tr>
-
       <th>Title</th>
       <th>Content</th>
+      <th>User</th>
       <th>Created</th>
       <th></th>
       <th></th>
       <th></th>
-       
     </tr>
   </thead>
 
@@ -21,15 +20,19 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
+        <td><%= post.user.email if post.user %></td>
         <td><%= time_ago_in_words(post.created_at) %> ago.</td>
         <td><%= link_to 'Show', post, class: 'btn btn-info btn-sm' %></td>
-        <td><%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning btn-sm' %></td>
-        <td><%= link_to 'Destroy', post, class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if post.user == current_user%>
+          <td><%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning btn-sm' %></td>
+          <td><%= link_to 'Destroy', post, class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Post', new_post_path %>
+ <% if user_signed_in? %>
+    <%= link_to 'New Post', new_post_path %>
+ <% end %>

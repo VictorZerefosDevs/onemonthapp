@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @posts = Post.all
@@ -9,14 +11,14 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+      @post = current_user.posts.build
   end
 
   def edit
   end
 
   def create
-    @post = Post.new(post_params)   
+    @post = current_user.posts.build(post_params)   
       if @post.save
        redirect_to @post, notice: 'Post was successfully created.' 
       else
@@ -35,6 +37,11 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to posts_url, notice: 'Post was successfully destroyed.'
+  end
+
+  def correct_user
+    @post = current_user.posts.find_by(id: params[:id])
+    redirect_to posts_path, notice: "This post does not belong to you." if @post.nil?
   end
 
   private
