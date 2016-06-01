@@ -10,6 +10,8 @@ $navbar-inverse-toggle-border-color: #c0392b;
 $navbar-inverse-toggle-icon-bar-bg: #c0392b;
 $navbar-inverse-toggle-hover-bg: #fff;
 $well-bg:rgba(26, 188, 156,0.5);
+$btn-border-radius-large: 30px;
+$btn-border-radius-base: 30px;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -33,9 +35,9 @@ body {
 	color: #c0392b;
 	font-family: 'Aladin', cursive;
 }
-.btn-default {
-	border-radius: 30px;
-}
+// .btn-default {
+// 	border-radius: 30px;
+// }
 .btn-default:hover {
 	background: #fff;
 	border-color:  #c0392b;
